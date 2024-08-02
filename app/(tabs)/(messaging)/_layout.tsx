@@ -8,8 +8,6 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 export default function HomeLayout() {
     const router = useRouteInfo()
 
-    console.log(router.pathname)
-
     return (
         <SafeAreaView className='bg-white mb-24'>
             <Header >

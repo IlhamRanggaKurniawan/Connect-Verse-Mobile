@@ -1,10 +1,81 @@
-import { View, Text } from 'react-native'
+import { View, ScrollView } from 'react-native'
 import React from 'react'
+import Contact from '@/components/Contact'
 
 const group = () => {
   return (
-    <View>
-      <Text>group</Text>
+    <View className='bg-white h-full w-full'>
+      <ScrollView className='w-full mb-2 px-2'>
+        <View className='mb-1 px-4 w-full bg-slate-100 rounded-3xl '>
+          <Contact />
+        </View>
+        <View className='mb-1 px-4 w-full bg-slate-100 rounded-3xl '>
+          <Contact />
+        </View>
+        <View className='mb-1 px-4 w-full bg-slate-100 rounded-3xl '>
+          <Contact />
+        </View>
+        <View className='mb-1 px-4 w-full bg-slate-100 rounded-3xl '>
+          <Contact />
+        </View>
+        <View className='mb-1 px-4 w-full bg-slate-100 rounded-3xl '>
+          <Contact />
+        </View>
+        <View className='mb-1 px-4 w-full bg-slate-100 rounded-3xl '>
+          <Contact />
+        </View>
+        <View className='mb-1 px-4 w-full bg-slate-100 rounded-3xl '>
+          <Contact />
+        </View>
+        <View className='mb-1 px-4 w-full bg-slate-100 rounded-3xl '>
+          <Contact />
+        </View>
+        <View className='mb-1 px-4 w-full bg-slate-100 rounded-3xl '>
+          <Contact />
+        </View>
+        <View className='mb-1 px-4 w-full bg-slate-100 rounded-3xl '>
+          <Contact />
+        </View>
+        <View className='mb-1 px-4 w-full bg-slate-100 rounded-3xl '>
+          <Contact />
+        </View>
+        <View className='mb-1 px-4 w-full bg-slate-100 rounded-3xl '>
+          <Contact />
+        </View>
+        <View className='mb-1 px-4 w-full bg-slate-100 rounded-3xl '>
+          <Contact />
+        </View>
+        <View className='mb-1 px-4 w-full bg-slate-100 rounded-3xl '>
+          <Contact />
+        </View>
+        <View className='mb-1 px-4 w-full bg-slate-100 rounded-3xl '>
+          <Contact />
+        </View>
+        <View className='mb-1 px-4 w-full bg-slate-100 rounded-3xl '>
+          <Contact />
+        </View>
+        <View className='mb-1 px-4 w-full bg-slate-100 rounded-3xl '>
+          <Contact />
+        </View>
+        <View className='mb-1 px-4 w-full bg-slate-100 rounded-3xl '>
+          <Contact />
+        </View>
+        <View className='mb-1 px-4 w-full bg-slate-100 rounded-3xl '>
+          <Contact />
+        </View>
+        <View className='mb-1 px-4 w-full bg-slate-100 rounded-3xl '>
+          <Contact />
+        </View>
+        <View className='mb-1 px-4 w-full bg-slate-100 rounded-3xl '>
+          <Contact />
+        </View>
+        <View className='mb-1 px-4 w-full bg-slate-100 rounded-3xl '>
+          <Contact />
+        </View>
+        <View className='mb-1 px-4 w-full bg-slate-100 rounded-3xl '>
+          <Contact />
+        </View>
+      </ScrollView>
     </View>
   )
 }

@@ -14,10 +14,10 @@ const Content = ({ imageUrl }: { imageUrl: string }) => {
                     </View>
                     <Text className='text-base'>ilham rangga</Text>
                 </View>
-                <Ionicons name="ellipsis-vertical" size={24} color="black"/>
+                <Ionicons name="ellipsis-vertical" size={24} color="black" />
             </View>
-            <View className='w-full rounded-2xl aspect-square px-1'>
-                <Image source={{ uri: imageUrl }}  className='w-full h-full rounded-3xl aspect-square' />
+            <View className='w-full rounded-2xl px-2'>
+                <Image source={{ uri: imageUrl }} className='h-96 rounded-3xl' contentFit='cover'/>
             </View>
             <View className='w-full flex-row p-2 px-3 justify-between'>
                 <View className='flex-row gap-4'>
@@ -32,7 +32,7 @@ const Content = ({ imageUrl }: { imageUrl: string }) => {
                         <Feather name="share" size={24} color="black" />
                     </View>
                 </View>
-                <Feather name="bookmark" size={24} color="black"/>
+                <Feather name="bookmark" size={24} color="black" />
             </View>
             <View className='px-4 pb-2'>
                 <Text>Lorem ipsum, dolor sit amet consectetur Lorem, ipsum dolor sit amet consectetur adipisicing elit. Enim fuga nihil delectus earum. Facere modi exercitationem, consequuntur aliquam inventore suscipit. Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique maiores consectetur dolorem magnam tenetur ea, saepe eligendi accusamus esse laboriosam. adipisicing elit. Iusto, cupiditate.</Text>

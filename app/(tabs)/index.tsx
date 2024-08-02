@@ -12,7 +12,7 @@ export default function HomeScreen() {
 
     useEffect(() => {
       const timer = setTimeout(() => {
-          router.push("/contact");
+          router.push("/");
       }, 100); // delay to ensure mounting
 
       return () => clearTimeout(timer); // cleanup on unmount

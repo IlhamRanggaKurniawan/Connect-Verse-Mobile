@@ -25,6 +25,7 @@ export default function TabLayout() {
         name="(explore)"
         options={{
           title: 'Explore',
+          href: "/fyp",
           tabBarIcon: ({ color, focused }) => (
             <TabBarIcon name={focused ? 'home' : 'home-outline'} color={color} />
           ),
@@ -34,6 +35,17 @@ export default function TabLayout() {
         name="(messaging)"
         options={{
           title: 'messaging',
+          href: "/contact",
+          tabBarIcon: ({ color, focused }) => (
+            <TabBarIcon name={focused ? 'home' : 'home-outline'} color={color} />
+          ),
+        }}
+      />
+      <Tabs.Screen
+        name="profile/[username]"
+        options={{
+          title: 'profile',
+          href: "/profile/ilham",
           tabBarIcon: ({ color, focused }) => (
             <TabBarIcon name={focused ? 'home' : 'home-outline'} color={color} />
           ),
