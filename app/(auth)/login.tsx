@@ -1,9 +1,8 @@
 import React, { useState } from 'react'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import FormField from '@/components/FormField'
-import { Text, TouchableOpacity, View } from 'react-native'
+import { Text, View } from 'react-native'
 import { Link } from 'expo-router'
-import { LinearGradient } from 'expo-linear-gradient'
 import GradientButton from '@/components/GradientButton'
 
 const login = () => {

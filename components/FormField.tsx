@@ -12,7 +12,7 @@ interface FormFieldProps {
 
 const FormField: React.FC<FormFieldProps> = ({ placeholder, value, handleChange, type, ...props }) => {
     return (
-            <View className='border-b border-slate-300 justify-center-center w-full rounded-lg focus:border-orange-500 mb-2'>
+            <View className={`border-b border-slate-300 justify-center w-full rounded-lg mb-2 ${props.className}`}>
                 <TextInput
                     value={value}
                     placeholder={placeholder}
