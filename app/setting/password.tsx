@@ -1,4 +1,4 @@
-import { View, Text } from 'react-native'
+import { View, Text, TouchableOpacity } from 'react-native'
 import React, { useState } from 'react'
 import { router, useRouter } from 'expo-router'
 import { SafeAreaView } from 'react-native-safe-area-context'
@@ -18,14 +18,17 @@ const password = () => {
                 </View>
             </Header>
             <View>
-                <View className='m-4'>
-                    <Text className='text-lg '>Password</Text>
-                    <FormField type='default' secureTextEntry value={password} handleChange={setPassword} placeholder='password' />
+                <View className='mx-4'>
+                    <Text className='text-lg ml-2'>Password</Text>
+                    <FormField type='default' secureTextEntry value={password} handleChange={setPassword} placeholder='password' className="border border-slate-200 rounded-2xl"/>
                 </View>
                 <View className='m-4'>
-                    <Text className='text-lg '>Confirm Password</Text>
-                    <FormField type='default' secureTextEntry value={confPassword} handleChange={SetConfPassword} placeholder='confirm password' />
+                    <Text className='text-lg ml-2'>Confirm Password</Text>
+                    <FormField type='default' secureTextEntry value={confPassword} handleChange={SetConfPassword} placeholder='confirm password' className="border border-slate-200 rounded-xl"/>
                 </View>
+                <TouchableOpacity className='bg-slate-800 p-4 px-6 rounded-2xl m-4'>
+                    <Text className='text-base text-white text-center'>Submit</Text>
+                </TouchableOpacity>
             </View>
         </SafeAreaView>
     )

@@ -1,11 +1,13 @@
-import { View, Text, TouchableOpacity, ScrollView } from 'react-native'
+import { View, Text, TouchableOpacity } from 'react-native'
 import React from 'react'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import Avatar from '@/components/Avatar'
 import { Image } from 'expo-image'
 import { FlatList } from 'react-native-gesture-handler'
+import { router } from 'expo-router'
 
 const username = () => {
+
   const images = [
     { uri: "https://gsjjcfotrvkfpibhnnji.supabase.co/storage/v1/object/public/Connect%20Verse/Profile%20Picture/172147583279410878.jpg" },
     { uri: "https://gsjjcfotrvkfpibhnnji.supabase.co/storage/v1/object/public/Connect%20Verse/Profile%20Picture/172147583279410878.jpg" },
@@ -77,14 +79,15 @@ const username = () => {
     </>
   );
 
+
   return (
     <SafeAreaView className='bg-white h-full'>
     <FlatList
       data={images}
       renderItem={({ item }) => (
-        <View style={{ width: '33%', padding: 2 }}>
-          <Image source={{ uri: item.uri }} style={{ width: '100%', aspectRatio: 1, borderRadius: 15 }} contentFit='cover' />
-        </View>
+        <TouchableOpacity className='w-[33%] p-0.5' onPress={() => router.push("/profile/post/1")}>
+          <Image source={{ uri: item.uri }} className='w-full aspect-square rounded-xl' contentFit='cover' />
+        </TouchableOpacity>
       )}
       keyExtractor={(item, index) => index.toString()}
       numColumns={3}
