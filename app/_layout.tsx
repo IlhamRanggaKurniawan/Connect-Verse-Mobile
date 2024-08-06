@@ -29,7 +29,8 @@ export default function RootLayout() {
           <Stack.Screen name="ai" options={{ headerShown: false }} />
           <Stack.Screen name="upload" options={{ headerShown: false }} />
           <Stack.Screen name="problem" options={{ headerShown: false }} />
-          <Stack.Screen name="saved" options={{ headerShown: false }} />
+          <Stack.Screen name="saved/index" options={{ headerShown: false }} />
+          <Stack.Screen name="saved/[id]" options={{ headerShown: false }} />
           <Stack.Screen name="(messaging)/directMessage/[id]" options={{ headerShown: false }} />
           <Stack.Screen name="(messaging)/groupChat/[id]" options={{ headerShown: false }} />
           <Stack.Screen name="+not-found" />

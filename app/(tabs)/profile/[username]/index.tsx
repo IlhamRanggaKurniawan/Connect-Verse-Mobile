@@ -85,7 +85,7 @@ const username = () => {
     <FlatList
       data={images}
       renderItem={({ item }) => (
-        <TouchableOpacity className='w-[33%] p-0.5' onPress={() => router.push("/profile/post/1")}>
+        <TouchableOpacity className='w-[33%] p-0.5' onPress={() => router.push("/profile/falah/1")}>
           <Image source={{ uri: item.uri }} className='w-full aspect-square rounded-xl' contentFit='cover' />
         </TouchableOpacity>
       )}

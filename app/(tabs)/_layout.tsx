@@ -3,9 +3,14 @@ import React from 'react';
 
 import { useColorScheme } from '@/hooks/useColorScheme';
 import { TabBarIcon } from '@/components/navigation/TabBarIcon';
+import { useRouteInfo } from 'expo-router/build/hooks';
 
 export default function TabLayout() {
   const colorScheme = useColorScheme();
+
+  const router = useRouteInfo()
+
+  console.log(router.pathname)
 
   return (
     <Tabs
@@ -51,17 +56,17 @@ export default function TabLayout() {
         }}
       />
       <Tabs.Screen
-        name="profile/[username]"
+        name="profile/[username]/index"
         options={{
           title: 'profile',
-          href: "/profile/ilham",
+          href: "/profile/falah",
           tabBarIcon: ({ color, focused }) => (
             <TabBarIcon name={focused ? 'home' : 'home-outline'} color={color} />
           ),
         }}
       />
       <Tabs.Screen
-        name="profile/post/[id]"
+        name="profile/[username]/[id]"
         options={{
           href: null,
         }}

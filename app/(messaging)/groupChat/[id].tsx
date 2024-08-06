@@ -14,7 +14,7 @@ const page = () => {
             <Header>
                 <View className='flex-row gap-10 items-center'>
                     <AntDesign name="arrowleft" size={30} color="black" onPress={router.back} />
-                    <Text className='text-lg font-semibold'>Open AI</Text>
+                    <Text className='text-lg font-semibold'>group</Text>
                 </View>
             </Header>
             <ScrollView className='mb-16'>
