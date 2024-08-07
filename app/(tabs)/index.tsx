@@ -2,21 +2,29 @@ import Avatar from '@/components/Avatar';
 import Content from '@/components/Content';
 import Header from '@/components/Header';
 import { Feather } from '@expo/vector-icons';
+import axios from 'axios';
 import { Link, useRouter } from 'expo-router';
 import React, { useEffect } from 'react';
 import { ScrollView, Text, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
 export default function HomeScreen() {
-    const router = useRouter()
+    
+  const getPost = async () => {
+    try {
+      console.log(process.env.API_URL)
 
-    useEffect(() => {
-      const timer = setTimeout(() => {
-          router.push("/profile/ilham");
-      }, 100); // delay to ensure mounting
+      const post = await axios.get(`${process.env.API_URL}/content/findall`)
 
-      return () => clearTimeout(timer); // cleanup on unmount
-  }, []);
+      console.log(post)
+    } catch (error) {
+      console.error(error)
+    }
+  }
+
+  useEffect(() => {
+    getPost()
+  })
 
   return (
     <SafeAreaView className='bg-white h-full'>

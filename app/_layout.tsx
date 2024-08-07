@@ -5,7 +5,6 @@ import 'react-native-reanimated';
 
 import { useColorScheme } from '@/hooks/useColorScheme';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
-import { useRouteInfo } from 'expo-router/build/hooks';
 
 // Prevent the splash screen from auto-hiding before asset loading is complete.
 SplashScreen.preventAutoHideAsync();
@@ -13,9 +12,6 @@ SplashScreen.preventAutoHideAsync();
 export default function RootLayout() {
   SplashScreen.hideAsync()
   const colorScheme = useColorScheme();
-  const router = useRouteInfo()
-
-  console.log(router.pathname)
 
   return (
     <GestureHandlerRootView>

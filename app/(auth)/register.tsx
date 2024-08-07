@@ -1,16 +1,38 @@
 import { View, Text } from 'react-native'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import FormField from '@/components/FormField'
 import { TouchableOpacity } from 'react-native-gesture-handler'
-import { Link } from 'expo-router'
+import { Link, router } from 'expo-router'
 import GradientButton from '@/components/GradientButton'
+import { useSession } from '@/hooks/useSession'
+import axios from 'axios'
+import * as SecureStore from 'expo-secure-store';
 
 const register = () => {
     const [username, setUsername] = useState("")
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
     const [confirmPassword, setConfirmPassword] = useState("")
+    const [error, setError] = useState("")
+
+    const register = async () => {
+        try {
+            setError("")
+
+            const user = await axios.post(`${process.env.API_URL}/user/register`, {
+                username, password, confirmPassword, email
+            })
+
+            SecureStore.setItemAsync("Token", user.data.AccessToken)
+
+            router.push("/")
+        } catch (error) {
+            setError((error as Error).message)
+            console.error(error)
+        }
+    }
+
 
     return (
         <SafeAreaView className='bg-white w-full h-full'>
@@ -46,7 +68,11 @@ const register = () => {
                         secureTextEntry
                     />
                 </View>
-                <GradientButton text='Sign up' colors={["rgb(253,162,60)", "rgb(244,195,0)"]}/>
+                <TouchableOpacity
+                    className='w-full h-12 rounded-2xl items-center justify-center bg-yellow-500 mt-2'
+                    onPress={register}>
+                    <Text className='text-base font-semibold text-white'>Sign up</Text>
+                </TouchableOpacity>
                 <Text className='text-lg text-slate-400 mt-4'>Already have an account ? <Link href="/login" className='text-orange-400 font-extrabold'>Sign in</Link></Text>
             </View>
         </SafeAreaView>

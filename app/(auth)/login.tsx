@@ -1,13 +1,33 @@
 import React, { useState } from 'react'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import FormField from '@/components/FormField'
-import { Text, View } from 'react-native'
-import { Link } from 'expo-router'
+import { Text, TouchableOpacity, View } from 'react-native'
+import { Link, router } from 'expo-router'
 import GradientButton from '@/components/GradientButton'
+import axios from 'axios'
+import * as SecureStore from 'expo-secure-store';
 
 const login = () => {
     const [username, setUsername] = useState("")
     const [password, setPassword] = useState("")
+    const [error, setError] = useState("")
+
+    const login = async () => {
+        try {
+            setError("")
+
+            const user = await axios.post(`http://192.168.0.104:8080/user/login`, {
+                username, password
+            })
+
+            SecureStore.setItemAsync("Token", user.data.AccessToken)
+
+            router.push("/")
+        } catch (error) {
+            setError((error as Error).message)
+            console.error(error)
+        }
+    }
 
     return (
         <SafeAreaView className='bg-white w-full h-full'>
@@ -31,7 +51,14 @@ const login = () => {
                         secureTextEntry
                     />
                 </View>
-                <GradientButton text='LOGIN' colors={["rgb(253,162,60)", "rgb(244,195,0)"]}/>
+                {error && (
+                    <Text className='text-red-500 text-end text-base w-full'>{error}</Text>
+                )}
+                <TouchableOpacity
+                    className='w-full h-12 rounded-2xl items-center justify-center bg-yellow-500 mt-2'
+                    onPress={login}>
+                    <Text className='text-base font-semibold text-white'>Login</Text>
+                </TouchableOpacity>
                 <Text className='text-lg text-slate-400 mt-4'>Don't have an account ? <Link href="/register" className='text-orange-400 font-extrabold'>Sign Up</Link></Text>
             </View>
         </SafeAreaView>
