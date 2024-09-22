@@ -2,33 +2,60 @@ import { Tabs } from 'expo-router';
 import React from 'react';
 
 import { TabBarIcon } from '@/components/navigation/TabBarIcon';
-import { Colors } from '@/constants/Colors';
-import { useColorScheme } from '@/hooks/useColorScheme';
+import { Compass, Home, Menu, MessageCircle, UserCircle } from 'lucide-react-native';
 
 export default function TabLayout() {
-  const colorScheme = useColorScheme();
 
   return (
     <Tabs
       screenOptions={{
-        tabBarActiveTintColor: Colors[colorScheme ?? 'light'].tint,
         headerShown: false,
       }}>
       <Tabs.Screen
         name="index"
         options={{
-          title: 'Home',
+          // title: 'Home',
           tabBarIcon: ({ color, focused }) => (
-            <TabBarIcon name={focused ? 'home' : 'home-outline'} color={color} />
+            <TabBarIcon icon={Home} color={color} />
           ),
         }}
       />
       <Tabs.Screen
-        name="explore"
+        name="(explore)"
         options={{
-          title: 'Explore',
+          // title: 'Explore',
+          href: "/fyp",
           tabBarIcon: ({ color, focused }) => (
-            <TabBarIcon name={focused ? 'code-slash' : 'code-slash-outline'} color={color} />
+            <TabBarIcon icon={Compass} color={color} />
+          ),
+        }}
+      />
+      <Tabs.Screen
+        name="menu"
+        options={{
+          // title: 'Menu',
+          tabBarIcon: ({ color, focused }) => (
+            <TabBarIcon icon={Menu} color={color} />
+          ),
+        }}
+      />
+      <Tabs.Screen
+        name="(messaging)"
+        options={{
+          // title: 'Messages',
+          href: '/contact',
+          tabBarIcon: ({ color, focused }) => (
+            <TabBarIcon icon={MessageCircle} color={color} />
+          ),
+        }}
+      />
+      <Tabs.Screen
+        name="profile/[username]/index"
+        options={{
+          // title: 'Profile',
+          href: '/profile/ilham',
+          tabBarIcon: ({ color, focused }) => (
+            <TabBarIcon icon={UserCircle} color={color} />
           ),
         }}
       />
